@@ -1,0 +1,47 @@
+{
+  "id": "thinking_of_you",
+  "variants": {
+    "quiet": {
+      "named": [
+        "I wanted to let you know you crossed my mind.",
+        "There’s nothing you need to do with that.",
+        "No reply needed. No meaning to extract.",
+        "Just a quiet hello from me."
+      ],
+      "anonymous": [
+        "This arrived without a name.",
+        "You crossed someone’s mind today.",
+        "There’s nothing you need to do with that.",
+        "Just letting you know."
+      ]
+    },
+    "present": {
+      "named": [
+        "I’ve been thinking about you for a moment now.",
+        "I didn’t want to interrupt you, but I didn’t want to stay silent either.",
+        "You don’t have to reply or acknowledge this.",
+        "I just wanted you to know I’m here."
+      ],
+      "anonymous": [
+        "This arrived without a name, after some thought.",
+        "You crossed someone’s mind, and they chose not to interrupt you.",
+        "You’re not expected to reply or react.",
+        "This moment is complete as it is."
+      ]
+    },
+    "held": {
+      "named": [
+        "I’ve been carrying this thought quietly.",
+        "You crossed my mind in a way that stayed with me.",
+        "I’m not asking you to respond or hold this with me.",
+        "I just wanted you to know you’re held in my thoughts."
+      ],
+      "anonymous": [
+        "This arrived without a name, and it wasn’t easy to decide to send.",
+        "You crossed someone’s mind, and they chose to leave the rest unsaid.",
+        "You’re not being asked to respond, remember, or interpret this.",
+        "This is the whole of it."
+      ]
+    }
+  }
+}

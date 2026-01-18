@@ -1,0 +1,47 @@
+{
+  "id": "reply_exso",
+  "variants": {
+    "quiet": {
+      "named": [
+        "I wanted to acknowledge what you sent.",
+        "It landed gently.",
+        "There’s nothing more I need to add.",
+        "Just letting you know I received it."
+      ],
+      "anonymous": [
+        "This is a response, left quietly.",
+        "What you sent was received.",
+        "Nothing else is being asked of you.",
+        "Just closing the loop."
+      ]
+    },
+    "present": {
+      "named": [
+        "I took some time with what you sent.",
+        "It stayed with me longer than I expected.",
+        "I didn’t want to leave it unanswered.",
+        "This is me meeting it where it landed."
+      ],
+      "anonymous": [
+        "This reply took a moment to decide.",
+        "What you sent didn’t pass unnoticed.",
+        "There’s no need to respond to this.",
+        "Just returning the presence."
+      ]
+    },
+    "held": {
+      "named": [
+        "What you sent carried weight for me.",
+        "I’ve been holding it quietly.",
+        "I’m not trying to resolve anything here.",
+        "I just needed to let you know it mattered."
+      ],
+      "anonymous": [
+        "This reply wasn’t easy to decide to send.",
+        "What you shared stayed with someone.",
+        "Nothing is being asked or expected.",
+        "This is the full extent of the response."
+      ]
+    }
+  }
+}
