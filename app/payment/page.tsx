@@ -4,7 +4,7 @@ export default function PaymentPage() {
       <div className="mx-auto flex min-h-screen w-full max-w-3xl items-center justify-center px-6 font-sans">
         <article className="mx-auto flex w-full max-w-[36ch] flex-col text-center">
           <header className="space-y-6">
-            <h1 className="text-[24px] leading-[1.6] text-[#3f3f3b]">The price</h1>
+            <h1 className="text-[24px] leading-[1.6] text-[#3f3f3b]">Xso</h1>
             <p className="text-[15px] leading-[1.9] text-[#5b5751]">
               A single price, held without explanation.
             </p>
