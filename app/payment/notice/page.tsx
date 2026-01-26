@@ -1,4 +1,4 @@
-export default function PaymentPreviewNoticePage() {
+export default function PaymentNoticePage() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center space-y-4">

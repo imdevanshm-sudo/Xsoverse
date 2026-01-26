@@ -17,12 +17,9 @@ export default function TermsPage() {
           </AboutSection>
 
           <AboutSection className="mt-12 space-y-4 text-[15px] leading-[1.9] text-[#5b5751]">
-            <p>Exso provides digital experiences created after purchase.</p>
-            <p>
-              By using Exso, you agree not to misuse the service or attempt to access
-              Exsos not intended for you.
-            </p>
-            <p>Exsos are provided “as is” for personal use.</p>
+            <p>Xsoverse sells a one-time purchase digital product. No physical goods are shipped.</p>
+            <p>Access is provided digitally after successful payment.</p>
+            <p>Refunds are governed by the Refund Policy page.</p>
           </AboutSection>
         </article>
       </div>

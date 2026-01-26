@@ -17,15 +17,12 @@ export default function PrivacyPage() {
           </AboutSection>
 
           <AboutSection className="mt-12 space-y-4 text-[15px] leading-[1.9] text-[#5b5751]">
-            <p>Exso respects your privacy.</p>
-            <p>We do not sell or share personal data.</p>
             <p>
-              Payment details are processed securely by our payment provider. Exso does
-              not store card information.
+              Xsoverse collects the minimum personal data required to process payments
+              and provide access.
             </p>
-            <p>
-              Exsos are private by design and accessible only via the generated link.
-            </p>
+            <p>Payment data is handled by third-party payment processors.</p>
+            <p>Personal data is not sold.</p>
           </AboutSection>
         </article>
       </div>

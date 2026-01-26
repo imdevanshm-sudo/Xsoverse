@@ -6,9 +6,9 @@ export default function PricingPage() {
       <div className="mx-auto flex min-h-[120vh] w-full max-w-3xl px-6 pb-40 pt-24 font-sans">
         <article className="mx-auto flex w-full max-w-[36ch] flex-col text-center">
           <header className="space-y-6">
-            <h1 className="text-[24px] leading-[1.6] text-[#3f3f3b]">The price</h1>
+            <h1 className="text-[24px] leading-[1.6] text-[#3f3f3b]">Pricing</h1>
             <p className="text-[15px] leading-[1.9] text-[#5b5751]">
-              A single price, held without explanation.
+              Xsoverse is a one-time purchase digital product.
             </p>
           </header>
 
@@ -17,10 +17,10 @@ export default function PricingPage() {
           </div>
 
           <div className="space-y-4 text-[14px] leading-[1.9] text-[#6b6761]">
-            <p>Exso costs $15.</p>
-            <p>This applies to any Exso, regardless of tone or anonymity.</p>
-            <p>Each Exso is created intentionally after purchase.</p>
-            <p>There are no subscriptions, no upgrades, and no add-ons.</p>
+            <p>The price is $15 for a one-time purchase of Xsoverse.</p>
+            <p>There are no subscriptions or recurring charges.</p>
+            <p>Delivery is digital with instant access after successful payment.</p>
+            <p>Refunds are governed by the 14-day Refund Policy.</p>
           </div>
 
           <div className="mt-16">

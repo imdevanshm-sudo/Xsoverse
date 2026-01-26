@@ -20,7 +20,7 @@ export default function PayPage() {
 
   const handleCheckout = () => {
     persistDraftToSession(draft);
-    router.push("/payment-preview");
+    router.push("/payment");
   };
 
   return (

@@ -17,11 +17,11 @@ export default function RefundPage() {
           </AboutSection>
 
           <AboutSection className="mt-12 space-y-4 text-[15px] leading-[1.9] text-[#5b5751]">
-            <p>Due to the personalized and digital nature of Exsos, all sales are generally final.</p>
             <p>
-              If you experience a technical issue or did not receive your Exso as intended,
-              please contact us and we will review the request on a case-by-case basis.
+              Refunds are available within 14 days from the date of purchase if the digital
+              product has not been accessed or used.
             </p>
+            <p>Refunds are not available after 14 days from the date of purchase.</p>
           </AboutSection>
         </article>
       </div>

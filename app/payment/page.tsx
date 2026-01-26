@@ -1,4 +1,4 @@
-export default function PaymentPreviewPage() {
+export default function PaymentPage() {
   return (
     <div className="bg-[#F8F7F4] text-[#3f3f3b]">
       <div className="mx-auto flex min-h-screen w-full max-w-3xl items-center justify-center px-6 font-sans">
@@ -16,7 +16,7 @@ export default function PaymentPreviewPage() {
 
           <div className="mt-16">
             <a
-              href="/payment-preview/notice"
+              href="/payment/notice"
               className="text-[13px] text-[#8f8a82] underline underline-offset-4 opacity-70 transition-opacity duration-500 hover:opacity-90"
             >
               Continue

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const FOOTER_REVEAL_RATIO = 0.65;
 
-const EXPERIENCE_PREFIXES = ["/create", "/xso", "/exso", "/loading", "/pay", "/payment-preview"];
+const EXPERIENCE_PREFIXES = ["/create", "/xso", "/exso", "/loading", "/pay", "/payment"];
 const POST_PAYMENT_ROUTES = ["/xso/ready"];
 
 type FooterLink = {
