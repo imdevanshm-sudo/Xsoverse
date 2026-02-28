@@ -9,6 +9,8 @@ export interface ExsoDraft {
   context?: string;
   replyToExsoId?: string;
   senderName?: string;
+  receiverName?: string;
+  showLetterOnEnd?: boolean;
 }
 
 export const exsoDraft: ExsoDraft = {};
@@ -19,4 +21,7 @@ export function resetExsoDraft() {
   delete exsoDraft.weight;
   delete exsoDraft.context;
   delete exsoDraft.replyToExsoId;
+  delete exsoDraft.senderName;
+  delete exsoDraft.receiverName;
+  delete exsoDraft.showLetterOnEnd;
 }

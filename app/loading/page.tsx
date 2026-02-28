@@ -5,9 +5,11 @@ import { useRouter } from "next/navigation";
 import { createExso } from "../../lib/createExso";
 import { useExsoDraft, loadDraftFromSession, clearDraftFromSession } from "../../lib/exsoDraft";
 import { saveExso } from "../../lib/exsoStore";
+import { isVerifiedPaid } from "../../lib/paymentGate";
+import { createTwoUseShareToken } from "../../lib/shareLink";
 
 const LINES = [
-  "Taking a moment…",
+  "Payment confirmed. Preparing your XSO.",
   "Putting this together.",
   "This won’t take long.",
   "Almost ready.",
@@ -19,11 +21,17 @@ export default function LoadingPage() {
   const router = useRouter();
   const { resetDraft } = useExsoDraft();
   const createdRef = useRef(false);
+  const redirectTargetRef = useRef<string | null>(null);
   const [lineIndex, setLineIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     if (createdRef.current) return;
+    const verified = isVerifiedPaid();
+    if (!verified) {
+      router.replace("/pricing");
+      return;
+    }
     const storedDraft = loadDraftFromSession();
     if (!storedDraft?.type || !storedDraft.identity || !storedDraft.weight) {
       router.replace("/xso/quiet");
@@ -32,21 +40,30 @@ export default function LoadingPage() {
 
     const exso = createExso(storedDraft);
     saveExso(exso);
+    void fetch("/api/exso", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(exso),
+      keepalive: true,
+    }).catch(() => {});
     resetDraft();
     clearDraftFromSession();
 
+    const token = createTwoUseShareToken(exso.id);
     try {
       const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(exso))));
       window.sessionStorage.setItem(
         READY_STORAGE_KEY,
-        JSON.stringify({ id: exso.id, payload: encoded })
+        JSON.stringify({ id: exso.id, payload: encoded, token })
       );
     } catch {
       window.sessionStorage.setItem(
         READY_STORAGE_KEY,
-        JSON.stringify({ id: exso.id })
+        JSON.stringify({ id: exso.id, token })
       );
     }
+
+    redirectTargetRef.current = "/xso/ready";
 
     createdRef.current = true;
   }, [router, resetDraft]);
@@ -62,8 +79,9 @@ export default function LoadingPage() {
     }, 1700);
 
     const redirectTimeout = window.setTimeout(() => {
-      router.replace("/xso/ready");
-    }, 7000);
+      const target = redirectTargetRef.current ?? "/xso/ready";
+      router.replace(target);
+    }, 4500);
 
     return () => {
       window.clearInterval(interval);

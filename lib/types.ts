@@ -4,6 +4,9 @@ export type Exso = {
   weight: "quiet" | "present" | "held";
   identity: "named" | "anonymous";
   senderName?: string;
+  receiverName?: string;
+  letterText?: string;
+  showLetterOnEnd?: boolean;
   text: string[];
   video: string;
   audio: string;

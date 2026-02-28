@@ -17,7 +17,7 @@ export default function XsoSetupFlow() {
   const [aboutSelection, setAboutSelection] = useState<'message' | 'me'>(() =>
     exsoType === 'quiet' ? 'message' : 'me'
   );
-  const [name, setName] = useState('');
+  const [name, setName] = useState(() => draft.senderName ?? '');
   const [isAnonymous, setIsAnonymous] = useState(false);
   const isNameValid = aboutSelection === 'message' || name.trim().length > 0;
 
@@ -72,7 +72,7 @@ export default function XsoSetupFlow() {
                 }}
                 className="rounded-[20px] bg-[#F2F2F0] p-6 text-center text-[14px] font-normal text-[#6a665f] shadow-sm transition-opacity duration-500 hover:opacity-80"
               >
-                With my name
+                Continue with my name
               </button>
               <button
                 onClick={() => {
@@ -87,7 +87,7 @@ export default function XsoSetupFlow() {
                 }}
                 className="rounded-[20px] bg-[#F2F2F0] p-6 text-center text-[14px] font-normal text-[#6a665f] shadow-sm transition-opacity duration-500 hover:opacity-80"
               >
-                In silence
+                Continue anonymously
               </button>
             </section>
           </main>
@@ -177,16 +177,12 @@ export default function XsoSetupFlow() {
                     senderName:
                       aboutSelection === 'me' ? name.trim() || undefined : undefined,
                   });
-                  router.push('/create/weight');
+                  router.push('/create/context');
                 }}
-                className={`w-full rounded-xl py-4 text-base font-normal transition-colors ${
-                  isNameValid
-                    ? 'text-gray-500 hover:bg-gray-100 hover:text-gray-800'
-                    : 'cursor-not-allowed text-gray-300'
-                }`}
+                className="btn-secondary w-full"
                 disabled={!isNameValid}
               >
-                Continue
+                Save details and continue
               </button>
             </div>
           </main>

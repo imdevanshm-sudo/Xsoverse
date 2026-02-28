@@ -53,8 +53,12 @@ export default function WeightSelectionPage() {
   useEffect(() => {
     if (!draft.type || !draft.identity) {
       router.replace("/xso/quiet");
+      return;
     }
-  }, [router, draft.type, draft.identity]);
+    if (draft.showLetterOnEnd && (!draft.receiverName || !draft.context)) {
+      router.replace("/create/context");
+    }
+  }, [router, draft.type, draft.identity, draft.receiverName, draft.context, draft.showLetterOnEnd]);
 
   const onSelectWeight = (weight: ExsoWeight) => {
     setDraft({
@@ -89,6 +93,9 @@ export default function WeightSelectionPage() {
               <div className="text-[16px] md:text-[18px] leading-[1.5] transition-colors duration-300 font-normal text-[#333]/90">
                 {option.description}
               </div>
+              <p className="mt-8 text-[11px] font-medium uppercase tracking-[0.2em] text-[#5e5a53]">
+                {`Choose ${option.title}`}
+              </p>
             </button>
           ))}
         </section>

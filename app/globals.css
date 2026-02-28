@@ -33,3 +33,21 @@ body {
     background: radial-gradient(120% 120% at 50% 0%, #f9f5ef 0%, #f3eee6 55%, #f1ece3 100%);
   }
 }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl border border-[#3f3f3b] bg-[#3f3f3b] px-5 py-3 text-sm font-medium tracking-wide text-[#f8f7f4] transition-colors duration-200 hover:bg-[#2f2f2c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6b675f] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8f7f4] disabled:cursor-not-allowed disabled:border-[#bfbab1] disabled:bg-[#d6d2cb] disabled:text-[#8f8a82];
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl border border-[#cfcac2] bg-white px-5 py-3 text-sm font-medium tracking-wide text-[#4b4a46] transition-colors duration-200 hover:bg-[#f7f5f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e877a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8f7f4] disabled:cursor-not-allowed disabled:border-[#d9d4cc] disabled:bg-[#f2efe9] disabled:text-[#aaa49b];
+  }
+
+  .btn-tertiary {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl px-4 py-2 text-sm font-medium tracking-wide text-[#6a665f] transition-colors duration-200 hover:bg-[#efebe4] hover:text-[#3f3f3b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e877a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8f7f4] disabled:cursor-not-allowed disabled:text-[#b4aea5];
+  }
+
+  .btn-danger-soft {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl border border-[#b9afa0] bg-[#e7dfd2] px-5 py-3 text-sm font-medium tracking-wide text-[#3f3a33] transition-colors duration-200 hover:bg-[#ddd3c4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e877a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f8f7f4] disabled:cursor-not-allowed disabled:border-[#cec4b6] disabled:bg-[#ede6dc] disabled:text-[#8f867a];
+  }
+}

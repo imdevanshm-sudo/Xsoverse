@@ -20,35 +20,42 @@ export default function PayPage() {
 
   const handleCheckout = () => {
     persistDraftToSession(draft);
-    router.push("/payment");
+    router.replace("/pricing");
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center space-y-4">
-        <p className="text-sm opacity-70">
-          This Exso will be created deliberately.
-        </p>
+    <div className="min-h-screen w-full font-serif text-ink-charcoal antialiased selection:bg-stone-300 selection:text-black bg-ritual-gradient flex flex-col">
+      <main className="flex-grow flex items-center justify-center px-6 py-12">
+        <section className="w-full max-w-md rounded-[20px] border border-stone-200/70 bg-white/70 p-6 md:p-8 text-center shadow-[0_18px_36px_rgba(40,40,40,0.08)] backdrop-blur-sm">
+          <p className="text-sm text-ink-charcoal/70">
+            Your XSO is almost ready for checkout.
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-2 text-[12px] text-[#6f6a61] sm:grid-cols-3">
+            <p>Secure checkout</p>
+            <p>One-time payment</p>
+            <p>Instant private link</p>
+          </div>
 
-        <button
-          type="button"
-          onClick={handleCheckout}
-          className="px-4 py-2 text-sm opacity-80 hover:opacity-100"
-        >
-          Continue to payment
-        </button>
-        <p className="text-[12px] opacity-60">
-          By continuing, you agree to our{" "}
-          <Link href="/terms" className="underline underline-offset-4">
-            Terms
-          </Link>{" "}
-          and{" "}
-          <Link href="/refund" className="underline underline-offset-4">
-            Refund Policy
-          </Link>
-          .
-        </p>
-      </div>
+          <button
+            type="button"
+            onClick={handleCheckout}
+            className="btn-secondary mt-8 w-full"
+          >
+            Go to secure checkout
+          </button>
+          <p className="mt-4 text-[12px] opacity-60">
+            By continuing, you agree to our{" "}
+            <Link href="/terms" className="underline underline-offset-4">
+              Terms
+            </Link>{" "}
+            and{" "}
+            <Link href="/refund" className="underline underline-offset-4">
+              Refund Policy
+            </Link>
+            .
+          </p>
+        </section>
+      </main>
     </div>
   );
 }
