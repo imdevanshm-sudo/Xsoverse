@@ -8,7 +8,9 @@ import {
   setPaidFlag,
 } from "../../../lib/paymentGate";
 
-export default function PaymentSuccessPage() {
+import { Suspense } from "react";
+
+function PaymentSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -60,9 +62,18 @@ export default function PaymentSuccessPage() {
     };
   }, [router, searchParams]);
 
+  return null;
+}
+
+export default function PaymentSuccessPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <p className="text-sm opacity-70">Payment confirmed. Preparing your XSO.</p>
+    <div className="min-h-screen flex items-center justify-center bg-[#F8F7F4]">
+      <div className="text-center">
+        <p className="text-sm text-[#5b5751] opacity-70">Payment confirmed. Preparing your XSO.</p>
+        <Suspense fallback={<p className="mt-2 text-xs italic text-[#aaaaaa]">Verifying...</p>}>
+          <PaymentSuccessContent />
+        </Suspense>
+      </div>
     </div>
   );
 }

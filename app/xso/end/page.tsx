@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 type Html2Canvas = (
@@ -46,7 +46,7 @@ type LetterData = {
   date: string;
 };
 
-export default function ExsoEndPage() {
+function ExsoEndContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isVisible, setIsVisible] = useState(false);
@@ -77,7 +77,7 @@ export default function ExsoEndPage() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => setIsVisible(true), 100);
-    loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js').catch(() => {});
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js').catch(() => { });
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -148,9 +148,8 @@ export default function ExsoEndPage() {
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_#1c1a17_0%,_#050505_100%)] pointer-events-none" />
 
       <div
-        className={`relative z-10 flex flex-col items-center transition-all duration-[1500ms] ease-out transform ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
+        className={`relative z-10 flex flex-col items-center transition-all duration-[1500ms] ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
       >
         <div
           ref={letterRef}
@@ -246,9 +245,8 @@ export default function ExsoEndPage() {
 
         <div
           data-html2canvas-ignore="true"
-          className={`mt-12 flex flex-col items-center space-y-6 transition-opacity duration-1000 delay-1000 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`mt-12 flex flex-col items-center space-y-6 transition-opacity duration-1000 delay-1000 ${isVisible ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <button
             type="button"
@@ -299,5 +297,13 @@ export default function ExsoEndPage() {
         }}
       />
     </div>
+  );
+}
+
+export default function ExsoEndPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#08090a] flex items-center justify-center p-4"></div>}>
+      <ExsoEndContent />
+    </Suspense>
   );
 }
